@@ -1,12 +1,9 @@
 <script>
-    import { stateStore } from '../../stores/state.js';
-    import { modalStore } from '../../stores/modals.js';
-    import Modal from '../reusable/Modal.svelte';
-    import Card from '../reusable/Card.svelte';
-    import Button from '../reusable/Button.svelte';
-    import Vault from '../../vault.js' 
-
-    //I am currently working on saving new vault form data save user from re entering
+    import { stateStore } from '../../DataStores/StateStore.js';
+    import { modalStore } from '../../DataStores/ModalStateStore.js';
+    import Modal from '../ReusableComponents/Modal.svelte';
+    import Card from '../ReusableComponents/Card.svelte';
+    import Button from '../ReusableComponents/Button.svelte';
 
     let saveObj;
     let errorMessage;
@@ -29,7 +26,7 @@
         //Vault passphrase validation
         if (fields.passphrase.trim().length < 15) {
         valid = false;
-        errors.passphrase = 'Passphrase name must be at least 15 characters long'
+        errors.passphrase = 'Passphrase must be at least 15 characters long'
         } else {
         errors.passphrase = ''
         }

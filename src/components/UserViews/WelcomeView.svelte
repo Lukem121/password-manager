@@ -1,7 +1,7 @@
 <script>
-    import { modalStore } from '../stores/modals.js';
-    import Card from './reusable/Card.svelte';
-    import Button from './reusable/Button.svelte';
+    import { modalStore } from '../../DataStores/ModalStateStore.js';
+    import Card from '../ReusableComponents/Card.svelte';
+    import Button from '../ReusableComponents/Button.svelte';
 </script>
 
 <div class="wrapper">

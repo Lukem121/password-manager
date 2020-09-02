@@ -1,5 +1,5 @@
 <script>
-    import { modalStore } from '../stores/modals.js';
+    import { modalStore } from '../DataStores/ModalStateStore.js';
     import NewVault from './UserModals/NewVault.svelte';
 </script>
 

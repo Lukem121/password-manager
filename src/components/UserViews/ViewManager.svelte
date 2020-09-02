@@ -1,9 +1,9 @@
 <script>
-    import Welcome from  './Welcome.svelte';
+    import WelcomeView from  './WelcomeView.svelte';
 </script>
 
 <div class="wrapper">
-    <Welcome />
+    <WelcomeView />
 </div>
 
 <style type="text/scss">
