@@ -42,8 +42,6 @@
         if (valid) {
             //Runs when valid vault details are given
             let vault = new Vault(fields.vaultName);
-            save(vault, fields.passphrase);
-            modalStore.set("default");
             modalStore.set("default");
             stateStore.set("vault");
         }
