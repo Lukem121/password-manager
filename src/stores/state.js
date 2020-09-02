@@ -4,6 +4,7 @@ import { writable } from 'svelte/store';
  * Usable states! 
  *  - default
  *  - new
+ *  - import
  */
 
-export const modalStore = writable("default");
+export const stateStore = writable("default");

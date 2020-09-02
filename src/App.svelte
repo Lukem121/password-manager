@@ -1,21 +1,28 @@
 <script>
-	import Main from './Main.svelte'
-	import ModalManager from './ModalManager.svelte'
+	import Modals from './components/Modals.svelte'
+	import Header from './components/header-footer/Header.svelte'
+	import Main from './components/Main.svelte'
+	import Footer from './components/header-footer/Footer.svelte'
+	
 </script>
 
 <main>
-	<ModalManager />
+	<Modals />
 	<div class="content">
+		<Header />
 		<Main />
+		<Footer />
 	</div>
 </main>
 
 <style type="text/scss">
+
 	.content {
     	padding: 30px 60px;
 
-		@media screen and (max-width: 640px) {
-    		padding: 10px 10px;
+		@media screen and (max-width: 500px) {
+    	padding: 10px 10px;
 		}
 	}  
+
 </style>

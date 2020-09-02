@@ -1,10 +1,15 @@
 <script>
-  import { modalStore } from './modals.js';
+  import { modalStore } from '../../stores/modals.js';
+  import { fade } from 'svelte/transition';
+
+  const handle = () => {
+    modalStore.set("default")
+  }
 </script>
                         
 
 <div class="backdrop" on:click|self={() => { modalStore.set("default") }}>
-  <div class="modal">
+  <div class="modal" in:fade="{{ duration: 100 }}" >
     <slot></slot>
   </div>
 </div>
@@ -14,7 +19,8 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
+    /* background: rgba(0,0,0,0.8); */
   }
   .modal{
     position: fixed;

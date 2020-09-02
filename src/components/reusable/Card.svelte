@@ -1,5 +1,5 @@
 <script>
-  import { modalStore } from './modals.js';
+  import { modalStore } from '../../stores/modals.js';
     import CloseButton from './CloseButton.svelte'
 
     export let closeButton = false;

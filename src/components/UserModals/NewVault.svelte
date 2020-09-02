@@ -1,8 +1,14 @@
 <script>
-    import Modal from './Modal.svelte';
-    import Card from './Card.svelte';
-    import Button from './Button.svelte';
+    import { stateStore } from '../../stores/state.js';
+    import { modalStore } from '../../stores/modals.js';
+    import Modal from '../reusable/Modal.svelte';
+    import Card from '../reusable/Card.svelte';
+    import Button from '../reusable/Button.svelte';
+    import Vault from '../../vault.js' 
 
+    //I am currently working on saving new vault form data save user from re entering
+
+    let saveObj;
     let errorMessage;
 
     //Form save data
@@ -38,11 +44,14 @@
 
         if (valid) {
             //Runs when valid vault details are given
+            let vault = new Vault(fields.vaultName);
+            save(vault, fields.passphrase);
+            modalStore.set("default");
+            modalStore.set("default");
+            stateStore.set("vault");
         }
     }
-
 </script>
-
 <Modal>
     <Card closeButton={true} errorMessage={errorMessage} on:closeClick>
     <span slot="title">
@@ -52,7 +61,7 @@
     <span slot="content">
         <form>
         <label for="vault-name">Name</label>
-        <input bind:value={fields.vaultName} name="vault-name" type="text">
+        <input bind:value={fields.vaultName} name="vault-name" type="text" autocomplete="off">
         <div class="error">{ errors.vaultName }</div>
 
         <label for="passphrase">Passphrase</label>
@@ -70,6 +79,8 @@
     </span>
     </Card>
 </Modal>
+
+
 
 <style type="text/scss">
   form {
@@ -89,6 +100,7 @@
     .error{
       font-weight: bold;
       font-size: 12px;
+      padding: 5px 0 0 5px;
       color: crimson;
     }
   }
