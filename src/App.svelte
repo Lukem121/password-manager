@@ -1,8 +1,8 @@
 <script>
-	import ModalManager from './Components/ModalManager.svelte'
-	import Header from './Components/header-footer/Header.svelte'
-	import ViewManager from './Components/UserViews/ViewManager.svelte'
-	import Footer from './Components/header-footer/Footer.svelte'
+	import ModalManager from './components/ModalManager.svelte'
+	import Header from './components/header-footer/Header.svelte'
+	import ViewManager from './components/UserViews/ViewManager.svelte'
+	import Footer from './components/header-footer/Footer.svelte'
 	
 </script>
 
