@@ -1,8 +1,10 @@
 <script>
 	import Main from './Main.svelte'
+	import ModalManager from './ModalManager.svelte'
 </script>
 
 <main>
+	<ModalManager />
 	<div class="content">
 		<Main />
 	</div>
