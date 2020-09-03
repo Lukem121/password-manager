@@ -1,3 +1,22 @@
 import { writable } from 'svelte/store';
 
-export const vaultStorage = writable(0);
+// entryLayout = {
+//     id,
+//     title,
+//     username,
+//     password,
+//     url,
+//     notes
+// }
+
+export const vaultStorage = writable({
+    vaultName : "blank",
+    passphrase : "blank",
+    entrys : [],
+    addEntry : (entry) =>{
+        this.entrys = [entry, ...this.entrys];
+    },
+    removeEntry: (entry) => {
+        console.log(`Removed ${enrty}`);
+    }
+});

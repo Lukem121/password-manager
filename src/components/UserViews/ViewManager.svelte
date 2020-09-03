@@ -1,9 +1,15 @@
 <script>
+    import { stateStore } from '../../DataStores/StateStore.js';
     import WelcomeView from  './WelcomeView.svelte';
+    import VaultView from  './VaultView.svelte';
 </script>
 
 <div class="wrapper">
-    <WelcomeView />
+    {#if $stateStore == "vault"}
+        <VaultView />
+    {:else}
+        <WelcomeView />
+    {/if}
 </div>
 
 <style type="text/scss">

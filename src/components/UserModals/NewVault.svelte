@@ -42,7 +42,11 @@
 
         if (valid) {
             //Runs when valid vault details are given
-            vaultStorage.constructor("Luke's Vault", "Lukeaskew121");
+            vaultStorage.update((vault) => {
+              vault.vaultName = fields.vaultName;
+              vault.passphrase = fields.passphrase;
+              return vault;
+            });
             modalStore.set("default");
             stateStore.set("vault");
         }

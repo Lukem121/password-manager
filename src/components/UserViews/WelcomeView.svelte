@@ -72,20 +72,6 @@
         <input bind:value={notes} name="notes" type="text" placeholder="notes">
         <button>Submit</button>
     </form>
-
-    <h2>{$vaultStorage.name}</h2>
-    <h2>{$vaultStorage.passphrase}</h2>
-    {#if $vaultStorage.entrys}
-        <ul>
-            {#each $vaultStorage.entrys as { title, username, password, url, notes }, i}
-                <li>Title: {title}</li>
-                <li>username: {username}</li>
-                <li>password: {password}</li>
-                <li>url: {url}</li>
-                <li>notes: {notes}</li>
-            {/each}
-        </ul>
-    {/if}
 </div>
 
 <style type="text/scss">
