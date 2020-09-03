@@ -49,29 +49,6 @@
             </Card>
         </div>
     </div>
-
-    <form on:submit|preventDefault={() => {
-        console.log(vaultStorage);
-
-        vaultStorage.addEntry(title, username, password, url, notes)
-        console.log(vaultStorage.name);
-    }}>
-        <label for="title"></label>
-        <input bind:value={title} name="title" type="text" placeholder="title">
-
-        <label for="username"></label>
-        <input bind:value={username} name="username" type="text" placeholder="username">
-
-        <label for="password"></label>
-        <input bind:value={password} name="password" type="text" placeholder="password">
-
-        <label for="url"></label>
-        <input bind:value={url} name="url" type="text" placeholder="url">
-
-        <label for="notes"></label>
-        <input bind:value={notes} name="notes" type="text" placeholder="notes">
-        <button>Submit</button>
-    </form>
 </div>
 
 <style type="text/scss">

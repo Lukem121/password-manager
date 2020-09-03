@@ -20,7 +20,7 @@
         </span>
 
         <span slot="content">
-            <textarea bind:value={importString} rows="15" cols="80" placeholder="Paste import string here..."></textarea>
+            <textarea bind:value={importString} placeholder="Paste import string here..."></textarea>
         </span>
 
         <span slot="action-btn">
@@ -31,6 +31,7 @@
 
 <style>
     textarea {
+        height: 240px;
         width: 100%;
         resize: none;
     }

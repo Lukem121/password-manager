@@ -9,14 +9,26 @@ import { writable } from 'svelte/store';
 //     notes
 // }
 
-export const vaultStorage = writable({
-    vaultName : "blank",
-    passphrase : "blank",
-    entrys : [],
-    addEntry : (entry) =>{
-        this.entrys = [entry, ...this.entrys];
-    },
-    removeEntry: (entry) => {
-        console.log(`Removed ${enrty}`);
-    }
-});
+function createVault() {
+	const { subscribe, set, update } = writable({
+        vaultName : "blank",
+        passphrase : "blank",
+        entrys : [],
+    });
+
+	return {
+        subscribe,
+        update,
+        addEntry : (entry) =>{
+            update( (n) => {
+                n.entrys = [entry, ...n.entrys];
+                return n;
+            })
+        },
+        removeEntry: (entry) => {
+            console.log(`Removed ${enrty}`);
+        }
+    };
+}
+
+export const vaultStorage = createVault();

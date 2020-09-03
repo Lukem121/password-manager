@@ -23,7 +23,9 @@
     /* background: rgba(0,0,0,0.8); */
   }
   .modal{
-    position: fixed;
+    height: 400px;
+    max-height: 100%;
+    position: absolute;
     top: 30%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
