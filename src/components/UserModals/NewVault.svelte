@@ -1,6 +1,7 @@
 <script>
     import { stateStore } from '../../DataStores/StateStore.js';
     import { modalStore } from '../../DataStores/ModalStateStore.js';
+    import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Modal from '../ReusableComponents/Modal.svelte';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
@@ -41,7 +42,7 @@
 
         if (valid) {
             //Runs when valid vault details are given
-            let vault = new Vault(fields.vaultName);
+            vaultStorage.constructor("Luke's Vault", "Lukeaskew121");
             modalStore.set("default");
             stateStore.set("vault");
         }

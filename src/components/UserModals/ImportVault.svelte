@@ -32,5 +32,6 @@
 <style>
     textarea {
         width: 100%;
+        resize: none;
     }
 </style>
