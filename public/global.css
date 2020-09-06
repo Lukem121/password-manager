@@ -31,6 +31,9 @@ a:hover {
 a:visited {
 	color: var(--text-colour);
 }
+a:link {
+	color: var(--text-colour);
+}
 
 label {
 	display: block;

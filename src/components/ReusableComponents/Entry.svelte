@@ -1,4 +1,5 @@
 <script>
+    import CopyButton from "./CopyButton.svelte";
     export let entry = {
         title: "Facebook",
         username: "lukeask@mail.com",
@@ -11,8 +12,8 @@
 <fieldset class="wrapper">
     <legend>{entry.title}</legend>
     <div class="content">
-        <p><b>Username:</b> {entry.username}</p>
-        <p><b>Password:</b> {entry.password}</p>
+        <p><b>Username:</b> {entry.username} <CopyButton toCopy={entry.username} /> </p> 
+        <p><b>Password:</b> {entry.password} <CopyButton toCopy={entry.password} /> </p> 
     </div>
 </fieldset>
 
