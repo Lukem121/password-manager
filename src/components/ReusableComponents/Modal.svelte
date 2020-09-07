@@ -20,6 +20,7 @@
     height: 100%;
     position: fixed;
     background: rgba(0,0,0,0.9);
+    z-index: 10;
     /* background: rgba(0,0,0,0.8); */
   }
   .modal{

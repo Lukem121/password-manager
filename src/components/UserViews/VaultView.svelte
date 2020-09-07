@@ -20,17 +20,18 @@
 		<Entry entry={entry}/>
 	{/each}
     <br>
-    <div class="btn">
-    <Button  on:click={() => { modalStore.set("entry") }} icon={"add"}>Add</Button>
-    
+    <div class="add-btn">
+        <Button  on:click={() => { modalStore.set("entry") }} icon={"add"}>Add</Button>
     </div>
 
 </div>
 
 <style type="text/scss">
-    .wrapper {
-        .btn{
-            margin-left: 15px;
+    .add-btn {
+        @media screen and (max-width: 500px) {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
         }
     }
 </style>
