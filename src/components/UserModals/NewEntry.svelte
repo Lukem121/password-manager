@@ -10,7 +10,7 @@
     let errorMessage;
 
     //Form save data
-    let fields = { title: '', username: '', password: '', url: '', notes: '' };
+    let fields = { title: '', username: '', password: '', url: 'No url', notes: 'Notes...' };
     let errors = { title: '', username: '', password: '', url: '', notes: '' };
     let valid = false;
 
