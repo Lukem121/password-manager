@@ -26,7 +26,7 @@
   .modal{
     height: 400px;
     max-height: 100%;
-    position: absolute;
+    position: fixed;
     top: 30%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
