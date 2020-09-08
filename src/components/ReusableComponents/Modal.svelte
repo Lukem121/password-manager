@@ -19,12 +19,14 @@
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,1);
     z-index: 10;
     /* background: rgba(0,0,0,0.8); */
   }
   .modal{
     position: fixed;
+    width: 100%;
+    padding: 30px;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);

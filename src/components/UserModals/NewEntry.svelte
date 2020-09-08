@@ -66,7 +66,7 @@
     </span>
 
     <span slot="content">
-        <form>
+        <div class="wrapper">
           <label for="entry-title">Title</label>
           <input bind:value={fields.title} name="entry-title" type="text" autocomplete="off">
           <div class="error">{ errors.title }</div>
@@ -86,7 +86,7 @@
           <label for="entry-notes">Notes</label>
           <textarea bind:value={fields.notes} placeholder="Notes..."></textarea>
           <div class="error">{ errors.notes }</div>
-        </form>
+        </div>
     </span>
 
     <span slot="action-btn">
@@ -98,15 +98,13 @@
 
 
 <style type="text/scss">
-  form {
-    width: 480px;
+  .wrapper {
     font-size: 20px;
     font-weight: bold;
 
     input {
-      width: 98%;
+      width: 100%;
       height: 40px;
-      padding-left: 15px;
       border-radius: 16px;
       font-weight: bold;
       border-style: none;
@@ -122,10 +120,6 @@
     textarea {
       height: 180px;
       width: 100%
-    }
-
-    @media screen and (max-width: 500px) {
-      width: 100%;
     }
   }
 </style>

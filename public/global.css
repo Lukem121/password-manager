@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-:root {
+*, :root {
 	--bg-colour: #202124;
 	--bg-dark-colour: #1A1A1D;
 	--text-colour: #E8E8E9;

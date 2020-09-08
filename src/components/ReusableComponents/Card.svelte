@@ -6,15 +6,15 @@
     export let errorMessage;
 </script>
 
-<fieldset class="card">
-    <legend>
+<div class="card">
+    <p>
         <slot name="title">
             <span>Missing title slot</span>
         </slot>
         {#if closeButton}
             <CloseButton on:click={() => { modalStore.set("default") }} />
         {/if}
-    </legend>
+    </p>
 
     <div class="content">
         <slot name="content">
@@ -31,24 +31,25 @@
             </slot>
         </div>
     </div>
-</fieldset>
+</div>
     
 
 <style type="text/scss">
-    .card {
-        min-width: 300px;
-        max-width: 500px;
-        padding: 5px 20px;
-        margin: 0 10px;
+    .card {       
+        box-sizing: border-box;
+        padding: 5px 20px 20px 20px;
         border-radius: 16px;
         background: var(--bg-dark-colour);
-        justify-content: space-between;
-        flex-direction: column;
-        display: flex;
-        border: 0;
 
-        legend {
+        .content {
+            height: 400px;
+            max-height: 100%;
+            overflow: auto;
+        }
+
+        p {
             width: 100%;
+            margin: -1.35rem 0 5px;
             font-size: 22px;
             font-weight: bold;
         }
@@ -59,6 +60,10 @@
         }
         .error {
             color: crimson;
+        }
+
+        @media screen and (max-width: 500px) {
+            width: 100%;
         }
     }
 </style>

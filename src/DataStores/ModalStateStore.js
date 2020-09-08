@@ -8,4 +8,4 @@ import { writable } from 'svelte/store';
  *  - entry
  */
 
-export const modalStore = writable("default");
+export const modalStore = writable("entry");
