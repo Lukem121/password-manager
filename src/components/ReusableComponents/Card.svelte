@@ -46,6 +46,7 @@
         flex-direction: column;
         display: flex;
         border: 0;
+        overflow: auto;
 
         legend {
             width: 100%;
