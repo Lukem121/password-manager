@@ -45,11 +45,43 @@ let fakeData = [{
 },
 {
     id: 45245,
-    title: "Facebook",
+    title: "Amazon",
     username: "mandy2616@gmail.com",
     password: "Happygonk123",
-    url: "facebook.com",
+    url: "amazon.co.uk",
     notes: "No notes..."
+},
+{
+    id: 45245,
+    title: "Netflix",
+    username: "mandy2616@gmail.com",
+    password: "Happygonk123",
+    url: "netflix.com",
+    notes: "Abbie also has acces to this"
+},
+{
+    id: 45245,
+    title: "PayPal",
+    username: "mandy2616@gmail.com",
+    password: "Happygonk123",
+    url: "paypal.com",
+    notes: "Must stop shopping"
+},
+{
+    id: 45245,
+    title: "Uber",
+    username: "mandy2616@gmail.com",
+    password: "Happygonk123",
+    url: "uber.com",
+    notes: "Must stop shopping"
+},
+{
+    id: 45245,
+    title: "ebay",
+    username: "mandy2616@gmail.com",
+    password: "Happygonk123",
+    url: "uber.com",
+    notes: "Must stop shopping"
 }
 ]
 

@@ -1,5 +1,6 @@
 <script>
     import CopyButton from "./CopyButton.svelte";
+    import StyledTitle from "../StyledTitle/StyledTitle.svelte";
     import { slide } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
 
@@ -14,6 +15,8 @@
     let showDraw = false;
     let showPassword = false;
 
+    let styledTitle;
+
     const toggleShowPassword = () => {
         showPassword = !showPassword;
     }
@@ -24,7 +27,7 @@
 </script>
 
 <div class="entry-wrapper">
-    <p class="entry-title">{entry.title}</p>
+    <p class="entry-title"><StyledTitle title={entry.title} /></p>
 
     <div class="username-section row">
         <span class="title">Username</span>
@@ -56,20 +59,19 @@
     </div>
 
     {#if showDraw}
-    <div class="drawer" transition:slide={{duration: 200, easing: sineInOut }}>
-        <div class="url-section row">
-            <span class="title">URL</span>
-            <div class="url-value">{entry.url}</div>
-            <div class="copy-button">
-                <CopyButton toCopy={ entry.url } />
+        <div class="drawer" transition:slide={{duration: 200, easing: sineInOut }}>
+            <div class="url-section row">
+                <span class="title">URL</span>
+                <div class="url-value">{entry.url}</div>
+                <div class="copy-button">
+                    <CopyButton toCopy={ entry.url } />
+                </div>
+            </div>
+
+            <div class="notes-section">
+                <div class="notes-value"><p>{entry.notes}</p></div>
             </div>
         </div>
-
-        <div class="notes-section">
-            <div class="notes-value"><p>{entry.notes}</p></div>
-        </div>
-    </div>
-        
     {/if}
 
     <div class="drawer-buttton" on:click={toggleDraw} class:spin="{showDraw}">

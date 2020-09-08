@@ -2,7 +2,7 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
 </script>
 <header>
-    <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>
+    <a href="#default"><img src="/images/logov2.png" alt="Onchain Logo"></a>
     <div class="header-right">
         <a href="#about">About</a>
     </div>
@@ -12,6 +12,7 @@
     /* Style the header with a grey background and some padding */
     header {
         overflow: hidden;
+        margin: 15px 0 20px 0;
         
         .header-right {
             padding-top: 10px; 
