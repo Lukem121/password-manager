@@ -3,15 +3,15 @@
     import { slide } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
 
-    export const entry = {
+    export let entry = {
         title: "Facebook",
-        username: "lukeask@mail.comlukeask@mail.com",
-        password: "goodpassword123goodpassword123",
+        username: "lukeask@mail.com",
+        password: "goodpassword123",
         url: "No url",
         notes: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo euLorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo eum cumqLorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo eum cumque aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.ue aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.m cumque aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.",
     };
 
-    let showDraw = true;
+    let showDraw = false;
     let showPassword = false;
 
     const toggleShowPassword = () => {
@@ -23,8 +23,8 @@
 
 </script>
 
-<fieldset>
-    <legend>{entry.title}</legend>
+<div class="entry-wrapper">
+    <p class="entry-title">{entry.title}</p>
 
     <div class="username-section row">
         <span class="title">Username</span>
@@ -76,16 +76,18 @@
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="white" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>
     </div>
 
-</fieldset>
+</div>
 
 <style type="text/scss">
 
-    fieldset {
-        border: 0;
-        background: var(--bg-dark-colour);
+    .entry-wrapper {
+        padding: 10px;
+        background-color: var(--bg-dark-colour);
         border-radius: 12px;
-        legend {
+        .entry-title {
+            font-size: 1.5rem;
             font-weight: bold;
+            margin: -1.8rem 0 5px;
         }
     }
 

@@ -17,7 +17,7 @@ let fakeData = [{
     username: "mandy2616@gmail.com",
     password: "Happygonk123",
     url: "facebook.com",
-    notes: ""
+    notes: "No notes..."
 },
 {
     id: 45234545,
@@ -41,7 +41,7 @@ let fakeData = [{
     username: "TheStomper22",
     password: "B£txz02nasn",
     url: "reddit.com",
-    notes: ""
+    notes: "No notes..."
 },
 {
     id: 45245,
@@ -49,7 +49,7 @@ let fakeData = [{
     username: "mandy2616@gmail.com",
     password: "Happygonk123",
     url: "facebook.com",
-    notes: ""
+    notes: "No notes..."
 }
 ]
 
