@@ -3,11 +3,6 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Button from '../ReusableComponents/Button.svelte';
     import Entry from '../ReusableComponents/Entry.svelte';
-
-    const addEntryClick = () => {
-
-    };
-
 </script>
 
 <div class="vault-wrapper">

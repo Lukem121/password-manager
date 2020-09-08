@@ -27,7 +27,7 @@
 </script>
 
 <div class="entry-wrapper">
-    <p class="entry-title"><StyledTitle title={entry.title} /></p>
+    <p class="entry-title"><StyledTitle title={ entry.title } /></p>
 
     <div class="username-section row">
         <span class="title">Username</span>

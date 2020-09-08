@@ -17,16 +17,16 @@
     const handleSubmit = () => {
         valid = true;
         //Title title validation
-        if (fields.title.trim().length < 5) {
+        if (fields.title.trim().length < 1) {
           valid = false;
-          errors.title = 'Title must be at least 5 characters long'
+          errors.title = 'Title must be at least 1 characters long'
         } else {
           errors.title = ''
         }
         //Username validation
-        if (fields.username.trim().length < 5) {
+        if (fields.username.trim().length < 1) {
           valid = false;
-          errors.username = 'Username must be at least 5 characters long'
+          errors.username = 'Username must be at least 1 characters long'
         } else {
           errors.username = ''
         }
@@ -55,6 +55,7 @@
                   notes: fields.notes
             });
             modalStore.set("default");
+            console.log($vaultStorage);
         }
     }
 </script>

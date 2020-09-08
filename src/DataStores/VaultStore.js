@@ -74,14 +74,6 @@ let fakeData = [{
     password: "Happygonk123",
     url: "uber.com",
     notes: "Must stop shopping"
-},
-{
-    id: 45245,
-    title: "ebay",
-    username: "mandy2616@gmail.com",
-    password: "Happygonk123",
-    url: "uber.com",
-    notes: "Must stop shopping"
 }
 ]
 
@@ -98,7 +90,7 @@ function createVault() {
         update,
         addEntry : (entry) =>{
             update( (n) => {
-                n.entrys = [entry, ...n.entrys];
+                n.entrys = [...n.entrys, entry];
                 return n;
             })
         },
