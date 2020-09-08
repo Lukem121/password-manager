@@ -24,10 +24,8 @@
     /* background: rgba(0,0,0,0.8); */
   }
   .modal{
-    height: 400px;
-    max-height: 100%;
     position: fixed;
-    top: 30%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);

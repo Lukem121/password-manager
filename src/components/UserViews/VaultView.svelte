@@ -11,26 +11,27 @@
 </script>
 
 <div class="wrapper">
-
-    
-
     <Entry />
-
-    {#each $vaultStorage.entrys as entry}
-		<Entry entry={entry}/>
-	{/each}
+    <!-- <div class="flex-wrapper">        
+        {#each $vaultStorage.entrys as entry}
+            <div class="entry">
+                <Entry entry={entry}/>
+            </div>
+        {/each}
+    </div> -->
     <br>
+    <br>
+    
     <div class="add-btn">
         <Button  on:click={() => { modalStore.set("entry") }} icon={"add"}>Add</Button>
     </div>
-
 </div>
 
 <style type="text/scss">
     .add-btn {
         @media screen and (max-width: 500px) {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px;
             right: 20px;
         }
     }

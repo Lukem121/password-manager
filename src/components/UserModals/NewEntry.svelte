@@ -10,7 +10,7 @@
     let errorMessage;
 
     //Form save data
-    let fields = { title: '', username: '', password: '', url: 'No url', notes: 'Notes...' };
+    let fields = { title: '', username: '', password: '', url: '', notes: '' };
     let errors = { title: '', username: '', password: '', url: '', notes: '' };
     let valid = false;
 
@@ -36,6 +36,13 @@
           errors.password = 'Password must be at least 5 characters long'
         } else {
           errors.password = ''
+        }
+
+        if(!fields.notes){
+          fields.notes = "No notes..."
+        }
+        if(!fields.url){
+          fields.url = "No url"
         }
 
         if (valid) {
@@ -91,6 +98,7 @@
 
 <style type="text/scss">
   form {
+    width: 480px;
     font-size: 20px;
     font-weight: bold;
 
@@ -99,7 +107,6 @@
       height: 40px;
       padding-left: 15px;
       border-radius: 16px;
-      font-size: 20px;
       font-weight: bold;
       border-style: none;
       outline: none;
@@ -115,6 +122,9 @@
       height: 180px;
       width: 100%
     }
-    
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
   }
 </style>

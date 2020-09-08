@@ -6,7 +6,6 @@
 	--text-colour: #E8E8E9;
 	--acent-colour: #50fa7b;
 	--warning-colour: #672121;
-
 	box-sizing: border-box;
 }
 
@@ -20,7 +19,8 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
-button{
+input, textarea, button {
+	border:none;
 	font-family: 'Poppins', sans-serif;
 }
 
