@@ -1,10 +1,6 @@
-<script>
+<script lang="ts">
   import { modalStore } from '../../DataStores/ModalStateStore.js';
   import { fade } from 'svelte/transition';
-
-  const handle = () => {
-    modalStore.set("default")
-  }
 </script>
                         
 

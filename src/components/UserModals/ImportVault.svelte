@@ -1,12 +1,10 @@
-<script>
-    import { modalStore } from '../../DataStores/ModalStateStore.js';
-
+<script lang="ts">    
     import Modal from '../ReusableComponents/Modal.svelte';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let importString;
-    let errorMessage; 
+    let importString:string;
+    let errorMessage:string; 
 
     const handleClick = () => {
 

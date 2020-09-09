@@ -1,5 +1,4 @@
-<script>
-    import { vaultStorage } from '../../DataStores/VaultStore.js';
+<script lang="ts">
 </script>
 <header>
     <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>

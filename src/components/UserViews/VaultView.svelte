@@ -1,7 +1,6 @@
-<script>
+<script lang="ts">
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
-    import Button from '../ReusableComponents/Button.svelte';
     import Entry from '../ReusableComponents/Entry.svelte';
 </script>
 

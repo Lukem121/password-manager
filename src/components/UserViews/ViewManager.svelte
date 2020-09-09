@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { stateStore } from '../../DataStores/StateStore.js';
     import WelcomeView from  './WelcomeView.svelte';
     import VaultView from  './VaultView.svelte';
