@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { modalStore } from '../../DataStores/ModalStateStore.js';
-    import CloseButton from './CloseButton.svelte'
+    import CloseButton from './CloseButton.svelte';
 
-    export let closeButton = false;
-    export let errorMessage;
+    export let closeButton: boolean = false;
+    export let errorMessage:string;
 </script>
 
 <div class="card">
@@ -20,7 +20,7 @@
         <slot name="content">
             <span>Missing content slot</span>
         </slot>
-        {#if errorMessage}
+        {#if errorMessage != ""}
             <div class="error">
                 {errorMessage}
             </div>

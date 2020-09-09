@@ -3,7 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
-import preprocess from 'svelte-preprocess';
+import typescript from "@rollup/plugin-typescript";
+import autoPreprocess   from 'svelte-preprocess';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -29,7 +30,7 @@ function serve() {
 }
 
 export default {
-	input: 'src/main.js',
+	input: 'src/main.ts',
 	output: {
 		sourcemap: true,
 		format: 'iife',
@@ -38,16 +39,18 @@ export default {
 	},
 	plugins: [
 		svelte({
+			preprocess: autoPreprocess (),
 			// enable run-time checks when not in production
 			dev: !production,
 			// we'll extract any component CSS out into
-			// a separate file - better for performance
+			// a separate file - better for performane
 			css: css => {
 				css.write('bundle.css');
-			},
-			preprocess: preprocess()
+			}
 		}),
-
+		typeCheck(),
+		typescript(),
+		
 		// If you have external dependencies installed from
 		// npm, you'll most likely need these plugins. In
 		// some cases you'll need additional configuration -
@@ -75,3 +78,14 @@ export default {
 		clearScreen: false
 	}
 };
+
+function typeCheck() {
+	return {
+	  writeBundle() {
+		require('child_process').spawn('svelte-check', {
+		  stdio: ['ignore', 'inherit', 'inherit'],
+		  shell: true
+		});
+	  }
+	}
+  }

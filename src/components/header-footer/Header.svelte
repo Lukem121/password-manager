@@ -1,5 +1,4 @@
-<script>
-    import { vaultStorage } from '../../DataStores/VaultStore.js';
+<script lang="ts">
 </script>
 <header>
     <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>
@@ -9,7 +8,6 @@
 </header>
 
 <style type="text/scss">
-    /* Style the header with a grey background and some padding */
     header {
         overflow: hidden;
         margin: 15px 0 10px 0;

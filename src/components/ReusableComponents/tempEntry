@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import CopyButton from "./CopyButton.svelte";
     import { slide } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';

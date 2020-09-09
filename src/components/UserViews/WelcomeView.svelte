@@ -1,16 +1,13 @@
-<script>
+<script lang="ts">
     import { modalStore } from '../../DataStores/ModalStateStore.js';
-    import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
-
-    let title, username, password, url, notes;
 </script>
 
 <div class="wrapper">
     <div class="flex-wrapper">
         <div class="new-card">
-            <Card>
+            <Card closeButton={false} errorMessage="">
                 <span slot="title">
                     Create a new vault?
                 </span>
@@ -31,7 +28,7 @@
             </Card>
         </div>
         <div class="import-card">
-            <Card>
+            <Card closeButton={false} errorMessage="">
                 <span slot="title">
                     Already have a vault? 
                 </span>

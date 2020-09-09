@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { modalStore } from '../DataStores/ModalStateStore.js';
     import NewVault from './UserModals/NewVault.svelte';
     import ImportVault from './UserModals/ImportVault.svelte';

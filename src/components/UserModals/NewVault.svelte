@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { stateStore } from '../../DataStores/StateStore.js';
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
@@ -6,8 +6,7 @@
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let saveObj;
-    let errorMessage;
+    let errorMessage:string;
 
     //Form save data
     let fields = { vaultName: '', passphrase: '', confPassphrase: '' };
@@ -33,7 +32,7 @@
         }
 
         //Vault confimation passphrase validation
-        if (!fields.confPassphrase | fields.confPassphrase !== fields.passphrase) {
+        if (!fields.confPassphrase || fields.confPassphrase !== fields.passphrase) {
         valid = false;
         errors.confPassphrase = 'Passphrases do not match'
         } else {

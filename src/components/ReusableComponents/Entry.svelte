@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import CopyButton from "./CopyButton.svelte";
     import StyledTitle from "../StyledTitle/StyledTitle.svelte";
     import { slide } from 'svelte/transition';
@@ -14,8 +14,6 @@
 
     let showDraw = false;
     let showPassword = false;
-
-    let styledTitle;
 
     const toggleShowPassword = () => {
         showPassword = !showPassword;

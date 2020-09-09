@@ -1,7 +1,6 @@
-<script>
+<script lang="ts">
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
-    import Button from '../ReusableComponents/Button.svelte';
     import Entry from '../ReusableComponents/Entry.svelte';
 </script>
 
@@ -63,7 +62,10 @@
         }
 
         @media screen and (max-width: 500px) {
-            display: none;
+            margin-bottom: 20px;
+            button {
+                display: none;
+            }
         }
     }
 

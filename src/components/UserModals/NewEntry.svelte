@@ -1,13 +1,11 @@
-<script>
-    import { stateStore } from '../../DataStores/StateStore.js';
+<script lang="ts">
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Modal from '../ReusableComponents/Modal.svelte';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let saveObj;
-    let errorMessage;
+    let errorMessage:string;
 
     //Form save data
     let fields = { title: '', username: '', password: '', url: '', notes: '' };

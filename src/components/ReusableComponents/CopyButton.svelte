@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { fade } from 'svelte/transition';
     export let toCopy = " ";
 
@@ -42,7 +42,6 @@
         }
         .popover {
             cursor: default;
-            width: 80px;
             display: inline;
             background-color: var(--acent-colour);
             text-align: center;
