@@ -9,6 +9,7 @@
 </header>
 
 <style type="text/scss">
+    // Luke is cool
     /* Style the header with a grey background and some padding */
     header {
         overflow: hidden;
