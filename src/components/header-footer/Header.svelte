@@ -8,8 +8,6 @@
 </header>
 
 <style type="text/scss">
-    // Luke is cool
-    /* Style the header with a grey background and some padding */
     header {
         overflow: hidden;
         margin: 15px 0 10px 0;

@@ -62,7 +62,10 @@
         }
 
         @media screen and (max-width: 500px) {
-            display: none;
+            margin-bottom: 20px;
+            button {
+                display: none;
+            }
         }
     }
 
