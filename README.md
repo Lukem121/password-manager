@@ -2,6 +2,8 @@
 
 [Live Demo](https://password-manager-seven.vercel.app/) 💪
 
+This is a project used to learn the frontend framework [Svelte](https://svelte.dev/). It also serverd as a playground for a learning new UI designs and implementing strong encryption in the site. 
+
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
 To create a new project based on this project using [degit](https://github.com/Rich-Harris/degit):
