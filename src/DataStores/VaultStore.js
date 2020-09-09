@@ -90,7 +90,7 @@ function createVault() {
         update,
         addEntry : (entry) =>{
             update( (n) => {
-                n.entrys = [...n.entrys, entry];
+                n.entrys = [entry, ...n.entrys];
                 return n;
             })
         },
