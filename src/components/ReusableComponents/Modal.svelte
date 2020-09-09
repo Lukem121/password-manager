@@ -14,22 +14,28 @@
   </div>
 </div>
 
-<style>
+<style type="text/scss">
   .backdrop{
     width: 100%;
     height: 100%;
     position: fixed;
-    background: rgba(0,0,0,1);
+    background: rgba(0,0,0,0.85);
     z-index: 10;
-    /* background: rgba(0,0,0,0.8); */
+    @media screen and (max-width: 500px) {
+      background: rgba(0,0,0,1);
+    }
+    
   }
   .modal{
     position: fixed;
-    width: 100%;
-    padding: 30px;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      padding: 30px;
+    }
   }
 </style>

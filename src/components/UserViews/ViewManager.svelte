@@ -14,7 +14,6 @@
 
 <style type="text/scss">
     .wrapper {
-        padding-top: 20px;
         @media screen and (max-width: 500px) {
             padding-top: 5px;
         }

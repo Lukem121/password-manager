@@ -2,9 +2,9 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
 </script>
 <header>
-    <a href="#default"><img src="/images/logov2.png" alt="Onchain Logo"></a>
+    <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>
     <div class="header-right">
-        <a href="#about">About</a>
+        <a href="#about"><img src="/images/about.png" alt="about link"></a>
     </div>
 </header>
 
@@ -12,27 +12,22 @@
     /* Style the header with a grey background and some padding */
     header {
         overflow: hidden;
-        margin: 15px 0 20px 0;
+        margin: 15px 0 10px 0;
         
         .header-right {
-            padding-top: 10px; 
+            :focus {outline:none;}
+            ::-moz-focus-inner {border:0;}
+            padding-top: 20px; 
             float: right;
+            img {
+                width: 50px;
+            }
         }
 
-        /* Style the header links */
-        a {
-            // float: left;
-            // text-align: center;
-            font-size: 18px;
-            // line-height: 25px;
-            // border-radius: 4px;
-
-            // Style the logo link
-            img {
-                width: 100%;
-                max-width: 280px;
-                height: 100%;
-            }
+        img {
+            width: 100%;
+            max-width: 280px;
+            height: 100%;
         }
         // Media queries for responsiveness
         @media screen and (max-width: 500px) {
@@ -43,7 +38,6 @@
             }
             .header-right {
                 display: none;
-                // float: none;
             }
         }
     }

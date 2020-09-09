@@ -24,18 +24,9 @@ input, textarea, button {
 	font-family: 'Poppins', sans-serif;
 }
 
-a {
+a, a:hover, a:focus, a:active, a:link {
+	border: 0;
 	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: none;
-}
-
-a:visited {
-	color: var(--text-colour);
-}
-a:link {
 	color: var(--text-colour);
 }
 

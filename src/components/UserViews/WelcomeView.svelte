@@ -53,6 +53,7 @@
 
 <style type="text/scss">
     .wrapper {
+        padding-top: 20px;
         .flex-wrapper{
             display: flex;
             flex-flow: wrap;

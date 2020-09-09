@@ -96,7 +96,8 @@
     .title {
         flex: 3;
         flex-shrink: 0;
-        min-width: 80px;
+        min-width: 120px;
+        text-align: center;
         color: white;
         margin-right: 5px;
         padding: 3px 15px;

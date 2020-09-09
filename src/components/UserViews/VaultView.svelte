@@ -6,6 +6,14 @@
 </script>
 
 <div class="vault-wrapper">
+
+    <div class="toolbar">
+        <span>Title <i class="fas fa-sort"></i></span>
+        <span>Username <i class="fas fa-sort"></i></span>
+        <span>Updated <i class="fas fa-sort"></i></span>
+        <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
+    </div>
+
     <div class="flex-wrapper">        
         {#each $vaultStorage.entrys as entry}
             <div class="entry">
@@ -14,7 +22,8 @@
         {/each}
     </div>
 
-    <div class="add-button-wrapper">
+    <div class="mobile-toolbar">
+        <div></div>
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-4x"></i></button>
     </div>
     
@@ -24,21 +33,61 @@
     .flex-wrapper {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
         .entry {
-            margin-bottom: 30px;
+            margin: 20px 10px;
         }
 
         @media screen and (max-width: 500px) {
             display: block;
+            .entry {
+                margin: 0 0 30px;
+            }
         }
     }
 
-    .add-button-wrapper {
+    .toolbar {
         display: flex;
-        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 5px 20px 5px 20px;
+        background-color: var(--bg-dark-colour);
+        border-radius: 12px;
+
+        span {
+            cursor: pointer;
+            i{
+                color: var(--acent-colour);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
     }
-    
+
+    .mobile-toolbar {
+        display: none;
+        @media screen and (max-width: 500px) {
+            display: flex;
+            flex-direction: row-reverse;
+            div{
+                position: fixed;
+                bottom: 35px;
+                right: 35px;
+                border-radius: 25px;
+                background: black;
+                padding: 20px;
+            }
+            button {
+                position: fixed;
+                bottom: 30px;
+                right: 20px;
+            }
+        }
+    }
+
     button {
         border-style: none;
         outline: none;
@@ -48,10 +97,6 @@
             color: var(--acent-colour);
         }
 
-        @media screen and (max-width: 500px) {
-            position: fixed;
-            bottom: 30px;
-            right: 20px;
-        }
+        
     }
 </style>

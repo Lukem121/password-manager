@@ -37,15 +37,9 @@
 <style type="text/scss">
     .card {       
         box-sizing: border-box;
-        padding: 5px 20px 20px 20px;
+        padding: 5px 20px 0 20px;
         border-radius: 16px;
         background: var(--bg-dark-colour);
-
-        .content {
-            height: 400px;
-            max-height: 100%;
-            overflow: auto;
-        }
 
         p {
             width: 100%;
@@ -64,6 +58,12 @@
 
         @media screen and (max-width: 500px) {
             width: 100%;
+            padding: 5px 20px 20px 20px;
+            .content {
+                height: 400px;
+                max-height: 100%;
+                overflow: auto;
+            }
         }
     }
 </style>
