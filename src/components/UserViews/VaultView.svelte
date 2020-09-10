@@ -2,14 +2,22 @@
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Entry from '../ReusableComponents/Entry.svelte';
+
+    // Was working here complete sort
+    const sortBy = (val:string) => {
+        vaultStorage.update( (n) => {
+            n.entrys = n.entrys.sort();
+            return n;
+        })
+    }
 </script>
 
 <div class="vault-wrapper">
 
     <div class="toolbar">
-        <span>Title <i class="fas fa-sort"></i></span>
-        <span>Username <i class="fas fa-sort"></i></span>
-        <span>Updated <i class="fas fa-sort"></i></span>
+        <span>Title <i class="fas fa-sort" on:click={() => sortBy("title") }></i></span>
+        <span>Username <i class="fas fa-sort" on:click={() => sortBy("username") }></i></span>
+        <span>Updated <i class="fas fa-sort" on:click={() => sortBy("title") }></i></span>
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
     </div>
 

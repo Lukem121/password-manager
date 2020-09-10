@@ -52,7 +52,8 @@
                 username: fields.username,
                 password: fields.password,
                 url: fields.url,
-                notes: fields.notes
+                notes: fields.notes,
+                updated: new Date()
               };
               n.entrys = [obj,...n.entrys];
               return n;

@@ -14,34 +14,38 @@ import { writable } from 'svelte/store';
 let fakeData = [{
     id: 45245,
     title: "Facebook",
-    username: "1",
+    username: "Lukem121",
     password: "Happygonk123",
     url: "facebook.com",
-    notes: "No notes..."
+    notes: "No notes...",
+    updated: new Date()
 },
 {
     id: 45234545,
     title: "Google",
-    username: "2",
+    username: "4",
     password: "CrypticMist22",
     url: "google.com",
-    notes: "This is the same for my other Google account"
+    notes: "This is the same for my other Google account",
+    updated: new Date()
 },
 {
     id: 4524353445,
     title: "Twitter",
-    username: "3",
+    username: "1",
     password: "Twinseats22",
     url: "twitter.com",
-    notes: "This is a fake account"
+    notes: "This is a fake account",
+    updated: new Date()
 },
 {
     id: 2342234,
     title: "Reddit",
-    username: "4",
+    username: "Jebby21",
     password: "B£txz02nasn",
     url: "reddit.com",
-    notes: "No notes..."
+    notes: "No notes...",
+    updated: new Date()
 },
 {
     id: 45245,
@@ -49,31 +53,35 @@ let fakeData = [{
     username: "5",
     password: "Happygonk123",
     url: "amazon.co.uk",
-    notes: "No notes..."
+    notes: "No notes...",
+    updated: new Date()
 },
 {
     id: 45245,
     title: "Netflix",
-    username: "6",
+    username: "5",
     password: "Happygonk123",
     url: "netflix.com",
-    notes: "Abbie also has acces to this"
+    notes: "Abbie also has acces to this",
+    updated: new Date()
 },
 {
     id: 45245,
     title: "PayPal",
-    username: "7",
+    username: "2",
     password: "Happygonk123",
     url: "paypal.com",
-    notes: "Must stop shopping"
+    notes: "Must stop shopping",
+    updated: new Date()
 },
 {
     id: 45245,
     title: "Uber",
-    username: "8",
+    username: "3",
     password: "Happygonk123",
     url: "uber.com",
-    notes: "Must stop shopping"
+    notes: "Must stop shopping",
+    updated: new Date()
 }
 ]
 
