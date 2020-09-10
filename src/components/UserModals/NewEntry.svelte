@@ -45,15 +45,19 @@
 
         if (valid) {
             //Runs when valid vault details are given
-            vaultStorage.addEntry({
-                  title: fields.title,
-                  username: fields.username,
-                  password: fields.password,
-                  url: fields.url,
-                  notes: fields.notes
-            });
+            vaultStorage.update( (n) => {
+              let obj = {
+                id: 324235,
+                title: fields.title,
+                username: fields.username,
+                password: fields.password,
+                url: fields.url,
+                notes: fields.notes
+              };
+              n.entrys = [obj,...n.entrys];
+              return n;
+            })
             modalStore.set("default");
-            console.log($vaultStorage);
         }
     }
 </script>
@@ -86,7 +90,7 @@
           <div class="error">{ errors.notes }</div>
         </div>
     </span>
-
+    
     <span slot="action-btn">
         <Button on:click={handleSubmit} icon={"start"}>Start</Button>
     </span>
@@ -102,7 +106,7 @@
 
     input {
       width: 100%;
-      height: 40px;
+      height: 40px; 
       padding-left: 15px;
       border-radius: 16px;
       font-weight: bold;

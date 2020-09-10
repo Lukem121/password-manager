@@ -14,7 +14,7 @@ import { writable } from 'svelte/store';
 let fakeData = [{
     id: 45245,
     title: "Facebook",
-    username: "mandy2616@gmail.com",
+    username: "1",
     password: "Happygonk123",
     url: "facebook.com",
     notes: "No notes..."
@@ -22,7 +22,7 @@ let fakeData = [{
 {
     id: 45234545,
     title: "Google",
-    username: "mandy2616@gmail.com",
+    username: "2",
     password: "CrypticMist22",
     url: "google.com",
     notes: "This is the same for my other Google account"
@@ -30,7 +30,7 @@ let fakeData = [{
 {
     id: 4524353445,
     title: "Twitter",
-    username: "@Garry2020",
+    username: "3",
     password: "Twinseats22",
     url: "twitter.com",
     notes: "This is a fake account"
@@ -38,7 +38,7 @@ let fakeData = [{
 {
     id: 2342234,
     title: "Reddit",
-    username: "TheStomper22",
+    username: "4",
     password: "B£txz02nasn",
     url: "reddit.com",
     notes: "No notes..."
@@ -46,7 +46,7 @@ let fakeData = [{
 {
     id: 45245,
     title: "Amazon",
-    username: "mandy2616@gmail.com",
+    username: "5",
     password: "Happygonk123",
     url: "amazon.co.uk",
     notes: "No notes..."
@@ -54,7 +54,7 @@ let fakeData = [{
 {
     id: 45245,
     title: "Netflix",
-    username: "mandy2616@gmail.com",
+    username: "6",
     password: "Happygonk123",
     url: "netflix.com",
     notes: "Abbie also has acces to this"
@@ -62,7 +62,7 @@ let fakeData = [{
 {
     id: 45245,
     title: "PayPal",
-    username: "mandy2616@gmail.com",
+    username: "7",
     password: "Happygonk123",
     url: "paypal.com",
     notes: "Must stop shopping"
@@ -70,34 +70,15 @@ let fakeData = [{
 {
     id: 45245,
     title: "Uber",
-    username: "mandy2616@gmail.com",
+    username: "8",
     password: "Happygonk123",
     url: "uber.com",
     notes: "Must stop shopping"
 }
 ]
 
-
-function createVault() {
-	const { subscribe, set, update } = writable({
-        vaultName : "blank",
-        passphrase : "blank",
-        entrys : fakeData,
-    });
-
-	return {
-        subscribe,
-        update,
-        addEntry : (entry) =>{
-            update( (n) => {
-                n.entrys = [entry, ...n.entrys];
-                return n;
-            })
-        },
-        removeEntry: (entry) => {
-            console.log(`Removed ${enrty}`);
-        }
-    };
-}
-
-export const vaultStorage = createVault();
+export const vaultStorage = writable({
+    vaultName : "blank",
+    passphrase : "blank",
+    entrys : fakeData,
+});

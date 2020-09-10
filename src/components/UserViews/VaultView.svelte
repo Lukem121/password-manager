@@ -13,7 +13,7 @@
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
     </div>
 
-    <div class="flex-wrapper">        
+    <div class="flex-wrapper">
         {#each $vaultStorage.entrys as entry}
             <div class="entry">
                 <Entry entry={entry}/>

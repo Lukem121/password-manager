@@ -4,13 +4,14 @@
     import { slide } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
 
-    export let entry = {
-        title: "Facebook",
-        username: "lukeask@mail.com",
-        password: "goodpassword123",
-        url: "No url",
-        notes: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo euLorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo eum cumqLorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet fuga accusantium minima, veritatis rerum aliquid quo eum cumque aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.ue aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.m cumque aspernatur incidunt autem quod libero eos! Unde quis dignissimos pariatur excepturi recusandae.",
-    };
+    export let entry: {
+        id: number,
+        title: string,
+        username: string,
+        password: string,
+        url: string,
+        notes: string
+    }
 
     let showDraw = false;
     let showPassword = false;
@@ -25,8 +26,10 @@
 </script>
 
 <div class="entry-wrapper">
-    <p class="entry-title"><StyledTitle title={ entry.title } /></p>
-
+    <p class="entry-title">
+        <StyledTitle txt={ entry.title.toLowerCase() } />
+    </p>
+    
     <div class="username-section row">
         <span class="title">Username</span>
         <div class="username-value">{entry.username}</div>

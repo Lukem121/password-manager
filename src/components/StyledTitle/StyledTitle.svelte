@@ -1,6 +1,5 @@
 <script lang="ts">
-    export let title:string;
-    let txt = title.toLowerCase();
+    export let txt:string;
 </script>
 
 <span>
@@ -34,7 +33,7 @@
         a<span style="color: #86B817">
         y</span></span></span></span>
     {:else}
-        { title }
+        <span>{ txt }</span>
     {/if}
     
 </span>
