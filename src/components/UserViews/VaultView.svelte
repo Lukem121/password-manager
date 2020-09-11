@@ -11,10 +11,41 @@
         })
     };
 
-    // Was working here complete sort
+    let lastAct;
     const sortBy = (val) => {
-        vaultStorage.update( (n) => {
-            n.entrys = n.entrys.sort();
+        console.log("Bonk");
+        let comparator = null;
+        if(lastAct ==  val){
+            vaultStorage.update((n) => {
+                n.entrys = n.entrys.reverse();
+                return n;
+            })
+            return
+        }
+        if(val == "title"){
+            lastAct = "title"
+            comparator = (a, b) => {
+                if(a.title < b.title) { return -1; }
+                if(a.title > b.title) { return 1; }
+                return 0;
+            }
+        }else if(val == "username"){
+            lastAct = "username"
+            comparator = (a, b) => {
+                if(a.username < b.username) { return -1; }
+                if(a.username > b.username) { return 1; }
+                return 0;
+            }
+        }else if(val == "updated"){
+            lastAct = "updated"
+            comparator = (a, b) => {
+                if(a.updated < b.updated) { return -1; }
+                if(a.updated > b.updated) { return 1; }
+                return 0;
+            }
+        }
+        vaultStorage.update((n) => {
+            n.entrys = n.entrys.sort(comparator);
             return n;
         })
     }
@@ -23,9 +54,9 @@
 <div class="vault-wrapper">
 
     <div class="toolbar">
-        <span>Title <i class="fas fa-sort" on:click={() => sortBy("title") }></i></span>
-        <span>Username <i class="fas fa-sort" on:click={() => sortBy("username") }></i></span>
-        <span>Updated <i class="fas fa-sort" on:click={() => sortBy("title") }></i></span>
+        <span on:click={() => sortBy("title") } >Title <i class="fas fa-sort"></i></span>
+        <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
+        <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
     </div>
 

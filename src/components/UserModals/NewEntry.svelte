@@ -65,7 +65,7 @@
             //Runs when valid vault details are given
             vaultStorage.update( (n) => {
               let obj = {
-                id: 324235,
+                id: Math.floor(Math.random() * (10000000 - 100 + 1)) + 100,
                 title: fields.title,
                 username: fields.username,
                 password: fields.password,

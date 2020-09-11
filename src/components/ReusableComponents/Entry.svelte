@@ -2,6 +2,7 @@
     import CopyButton from "./CopyButton.svelte";
     import StyledTitle from "../StyledTitle/StyledTitle.svelte";
     import { slide } from 'svelte/transition';
+    import { scale } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
 
     export let entry;
@@ -21,6 +22,9 @@
 <div class="entry-wrapper">
     <p class="entry-title">
         <StyledTitle txt={ entry.title.toLowerCase() } />
+        {#if showDraw}
+            <i transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}" class="fas fa-edit"></i>
+        {/if}
     </p>
     
     <div class="username-section row">
@@ -66,6 +70,7 @@
             <div class="notes-section">
                 <div class="notes-value"><p>{entry.notes}</p></div>
             </div>
+            <span class="last-updated" >Updated: {entry.updated.toLocaleString()}</span>
         </div>
     {/if}
 
@@ -82,9 +87,18 @@
         background-color: var(--bg-dark-colour);
         border-radius: 12px;
         .entry-title {
+            display: flex;
+            justify-content: space-between;
             font-size: 1.5rem;
             font-weight: bold;
             margin: -1.8rem 0 5px;
+
+            i{
+                cursor: pointer;
+                font-size: 1.5rem;
+                margin-top: 5px;
+                color: var(--acent-colour);
+            }
         }
     }
 
@@ -199,7 +213,11 @@
                     font-weight: bold;
                 }
             }
-            margin-bottom: 10px;
+        }
+        .last-updated {
+            font-size: 0.75rem;
+            color: gray;
+            padding-left: 5px;
         }
     }
 
