@@ -1,6 +1,8 @@
 <script>
     import CopyButton from "./CopyButton.svelte";
     import StyledTitle from "../StyledTitle/StyledTitle.svelte";
+    import { modalStore } from '../../DataStores/ModalStateStore.js';
+    import { vaultStorage } from '../../DataStores/VaultStore.js';
     import { slide } from 'svelte/transition';
     import { scale } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
@@ -23,7 +25,7 @@
     <p class="entry-title">
         <StyledTitle txt={ entry.title.toLowerCase() } />
         {#if showDraw}
-            <i transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}" class="fas fa-edit"></i>
+            <span on:click={() => { modalStore.set("update_entry-" + entry.id) }} transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}">Edit<i class="fas fa-pen"></i></span>
         {/if}
     </p>
     
@@ -93,11 +95,16 @@
             font-weight: bold;
             margin: -1.8rem 0 5px;
 
-            i{
+            span {
                 cursor: pointer;
-                font-size: 1.5rem;
-                margin-top: 5px;
-                color: var(--acent-colour);
+                font-size: 1rem;
+                margin-top: 10px;
+                
+                i{  
+                    margin-left: 5px;
+                    font-size: 1.2rem;
+                    color: var(--acent-colour);
+                }
             }
         }
     }
