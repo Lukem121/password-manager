@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { quintOut } from "svelte/easing";
     import { crossfade } from "svelte/transition";
     import { flip } from "svelte/animate";
@@ -89,7 +89,7 @@
     const getKey = item => (key ? item[key] : item);
   
     // PROPS
-    export let list:any;
+    export let list;
     export let key;
   </script>
   

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import ModalManager from './components/ModalManager.svelte'
 	import Header from './components/header-footer/Header.svelte'
 	import ViewManager from './components/UserViews/ViewManager.svelte'

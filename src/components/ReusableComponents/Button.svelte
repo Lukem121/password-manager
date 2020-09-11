@@ -1,5 +1,5 @@
-<script lang="ts">
-    export let icon:string;
+<script>
+    export let icon;
 </script>
 
 <button on:click>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Entry from '../ReusableComponents/Entry.svelte';
@@ -12,7 +12,7 @@
     };
 
     // Was working here complete sort
-    const sortBy = (val:string) => {
+    const sortBy = (val) => {
         vaultStorage.update( (n) => {
             n.entrys = n.entrys.sort();
             return n;

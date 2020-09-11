@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 </script>
 <header>
     <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>

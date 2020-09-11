@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 </script>
 
 <button on:click>

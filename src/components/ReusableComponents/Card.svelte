@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
   import { modalStore } from '../../DataStores/ModalStateStore.js';
     import CloseButton from './CloseButton.svelte';
 
-    export let closeButton: boolean = false;
-    export let errorMessage:string;
+    export let closeButton = false;
+    export let errorMessage;
 </script>
 
 <div class="card">

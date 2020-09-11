@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';

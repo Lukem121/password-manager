@@ -1,17 +1,10 @@
-<script lang="ts">
+<script>
     import CopyButton from "./CopyButton.svelte";
     import StyledTitle from "../StyledTitle/StyledTitle.svelte";
     import { slide } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
 
-    export let entry: {
-        id: number,
-        title: string,
-        username: string,
-        password: string,
-        url: string,
-        notes: string
-    }
+    export let entry;
 
     let showDraw = false;
     let showPassword = false;

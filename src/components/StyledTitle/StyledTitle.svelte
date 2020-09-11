@@ -1,5 +1,5 @@
-<script lang="ts">
-    export let txt:string;
+<script>
+    export let txt;
 </script>
 
 <span>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
     import { stateStore } from '../../DataStores/StateStore.js';
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
@@ -6,7 +6,7 @@
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let errorMessage:string;
+    let errorMessage;
 
     //Form save data
     let fields = { vaultName: '', passphrase: '', confPassphrase: '' };

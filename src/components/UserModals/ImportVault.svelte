@@ -1,10 +1,10 @@
-<script lang="ts">    
+<script>    
     import Modal from '../ReusableComponents/Modal.svelte';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let importString:string;
-    let errorMessage:string; 
+    let importString;
+    let errorMessage; 
 
     const handleClick = () => {
 

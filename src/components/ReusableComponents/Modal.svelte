@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { modalStore } from '../../DataStores/ModalStateStore.js';
   import { fade } from 'svelte/transition';
 </script>
