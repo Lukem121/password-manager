@@ -7,7 +7,7 @@
     const [send, receive] = crossfade({
       duration: d => Math.sqrt(d * 200),
   
-      fallback(node, params) {
+      fallback(node) {
         const style = getComputedStyle(node);
         const transform = style.transform === "none" ? "" : style.transform;
   
@@ -21,6 +21,32 @@
         };
       }
     });
+
+    // const getClosest = (elem, selector) => {
+    //     for ( ; elem && elem !== document; elem = elem.parentNode ) {
+    //         if ( elem.matches( selector ) ) return elem;
+    //     }
+    //     return null;
+    // };
+
+    // DRAG AND DROP MOBILE
+    // let activeEvent = '';
+    // let activeItem;
+    // const handleTouchStart = (event) => {
+    //     let activeItemID = getDraggedParent(event.target).id;
+    //     activeItem = document.querySelector(`[data-id="${activeItemID}"]`);
+    //     console.log(activeItem.style);
+    //     activeEvent = 'start';
+    // }
+    // const handleTouchMove = (event) => {
+    //     let touchLocation = event.targetTouches[0];
+    // 	let pageX = Math.floor((touchLocation.pageX - 100)) + "px";
+    //     let pageY = Math.floor((touchLocation.pageY - 100)) + "px";
+    // 	activeItem.style.position = "fixed";
+    // 	activeItem.style.left = pageX;
+    // 	activeItem.style.top = pageY;
+    // 	activeEvent = 'move';
+    // }
   
     // DRAG AND DROP
     let isOver = false;
@@ -81,14 +107,16 @@
   {#if list && list.length}
 
       {#each list as item, index (getKey(item))}
-        <div class="entry"
+        <div class="entry mobile-drag"
           data-index={index}
           data-id={JSON.stringify(getKey(item))}
           draggable="true"
+
           on:dragstart={start}
           on:dragover={over}
           on:dragleave={leave}
           on:drop={drop}
+          
           in:receive={{ key: getKey(item) }}
           out:send={{ key: getKey(item) }}
           animate:flip={{ duration: 300 }}
