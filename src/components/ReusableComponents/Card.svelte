@@ -25,11 +25,11 @@
                 {errorMessage}
             </div>
         {/if}
-        <div class="action-btn">
-            <slot name="action-btn">
-                <span>Missing action button slot</span>
-            </slot>
-        </div>
+    </div>
+    <div class="action-btn">
+        <slot name="action-btn">
+            <span>Missing action button slot</span>
+        </slot>
     </div>
 </div>
     
@@ -52,7 +52,7 @@
             justify-content: flex-end;
             display: flex;
             @media screen and (max-width: 500px) {
-                padding: 10px 0px 10px;
+                padding: 10px 0 0;
             }
         }
         .error {
@@ -63,7 +63,7 @@
             width: 100%;
             padding: 5px 20px 20px 20px;
             .content {
-                max-height: 400px;
+                max-height: 50vh;
                 overflow: auto;
             }
         }
