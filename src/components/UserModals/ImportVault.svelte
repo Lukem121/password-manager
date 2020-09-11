@@ -1,4 +1,7 @@
 <script>    
+    import { modalStore } from '../../DataStores/ModalStateStore.js';
+    import { stateStore } from '../../DataStores/StateStore.js';
+
     import Modal from '../ReusableComponents/Modal.svelte';
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
@@ -6,9 +9,36 @@
     let importString;
     let errorMessage = "";
 
-    const handleClick = () => {
+    const validateInput = (val) =>{
+        try {
+            let parsedInput = JSON.parse(val);
+            let saveObj = {...parsedInput};
+            delete parsedInput.valid;
+            parsedInput = JSON.stringify(parsedInput).replace(/\s+/g, ' ').trim();
+            if(saveObj.valid == CryptoJS.MD5(parsedInput)){
+            return true;
+            }else{
+            return false
+            }
+        } catch (e) {
+            return false;
+        }
+    };
 
+    const handleClick = () => {
+      if(validateInput(importString)){
+            console.log(importString)
+            localStorage.setItem("r-vault", importString);
+
+
+            modalStore.set("enter-passphrase")
+            console.log("Sucsessfuly saved imported data 🥳")
+      }else{
+        errorMessage ='Not a valid import string 😭';
+        console.error(errorMessage)
+      }
     }
+    
 </script>
 
 <Modal>

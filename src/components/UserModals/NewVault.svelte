@@ -41,11 +41,12 @@
 
         if (valid) {
             //Runs when valid vault details are given
-            vaultStorage.update((vault) => {
-              vault.vaultName = fields.vaultName;
-              vault.passphrase = fields.passphrase;
-              return vault;
+            vaultStorage.update((n) => {
+              n.vaultName = fields.vaultName;
+              n.passphrase = fields.passphrase;
+              return n;
             });
+            console.log($vaultStorage);
             modalStore.set("default");
             stateStore.set("vault");
         }
