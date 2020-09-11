@@ -63,7 +63,8 @@
         <div class="drawer" transition:slide={{duration: 200, easing: sineInOut }}>
             <div class="url-section row">
                 <span class="title">URL</span>
-                <div class="url-value">{entry.url}</div>
+                <a class="url-value" href="{entry.url}">{entry.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}</a>
+                <!-- <div class="url-value">{entry.url}</div> -->
                 <div class="copy-button">
                     <CopyButton toCopy={ entry.url } />
                 </div>
@@ -180,6 +181,7 @@
                 
                 display: inline;
                 padding: 2px 20px 2px 20px;
+                color: black;
                 background-color: white;
             }
             .copy-button {

@@ -5,12 +5,26 @@
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let errorMessage:string;
+    let errorMessage:string = "";
 
     //Form save data
     let fields = { title: '', username: '', password: '', url: '', notes: '' };
     let errors = { title: '', username: '', password: '', url: '', notes: '' };
     let valid = false;
+
+    const getValidUrl = (url = "") => {
+        let newUrl = window.decodeURIComponent(url);
+        newUrl = newUrl.trim().replace(/\s/g, "");
+
+        if(/^(:\/\/)/.test(newUrl)){
+            return `http${newUrl}`;
+        }
+        if(!/^(f|ht)tps?:\/\//i.test(newUrl)){
+            return `http://${newUrl}`;
+        }
+
+        return newUrl;
+    };
 
     const handleSubmit = () => {
         valid = true;
@@ -36,12 +50,16 @@
           errors.password = ''
         }
 
+        if(fields.url){
+          fields.url = getValidUrl(fields.url);
+        }else{
+          fields.url = "No url"
+        }
+
         if(!fields.notes){
           fields.notes = "No notes..."
         }
-        if(!fields.url){
-          fields.url = "No url"
-        }
+        
 
         if (valid) {
             //Runs when valid vault details are given
@@ -59,6 +77,8 @@
               return n;
             })
             modalStore.set("default");
+            //Scrol to top of page after new entry has been added
+            document.body.scrollTop = document.documentElement.scrollTop = 0;
         }
     }
 </script>
@@ -93,7 +113,7 @@
     </span>
     
     <span slot="action-btn">
-        <Button on:click={handleSubmit} icon={"start"}>Start</Button>
+        <Button on:click={handleSubmit} icon={"add"}>Add</Button>
     </span>
     </Card>
 </Modal>
