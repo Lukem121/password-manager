@@ -4,7 +4,7 @@
     import Button from '../ReusableComponents/Button.svelte';
 
     let importString;
-    let errorMessage; 
+    let errorMessage = "";
 
     const handleClick = () => {
 

@@ -51,6 +51,9 @@
             padding: 15px 0px 15px;
             justify-content: flex-end;
             display: flex;
+            @media screen and (max-width: 500px) {
+                padding: 10px 0px 10px;
+            }
         }
         .error {
             color: crimson;
@@ -60,8 +63,7 @@
             width: 100%;
             padding: 5px 20px 20px 20px;
             .content {
-                height: 400px;
-                max-height: 100%;
+                max-height: 400px;
                 overflow: auto;
             }
         }

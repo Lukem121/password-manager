@@ -50,7 +50,6 @@
 
 <style type="text/scss">
     .wrapper {
-        padding-top: 20px;
         .flex-wrapper{
             display: flex;
             flex-flow: wrap;
@@ -58,7 +57,7 @@
 
             .import-card{
                 @media screen and (max-width: 500px) {
-                    padding-top: 20px; 
+                    padding-top: 30px; 
                 }
             }
 

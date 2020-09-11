@@ -6,7 +6,7 @@
     import Card from '../ReusableComponents/Card.svelte';
     import Button from '../ReusableComponents/Button.svelte';
 
-    let errorMessage;
+    let errorMessage = "";
 
     //Form save data
     let fields = { vaultName: '', passphrase: '', confPassphrase: '' };
