@@ -6,4 +6,4 @@ import { writable } from 'svelte/store';
  *  - vault
  */
 
-export const stateStore = writable("vault");
+export const stateStore = writable("default");

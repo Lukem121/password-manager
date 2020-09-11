@@ -3,6 +3,22 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Entry from '../ReusableComponents/Entry.svelte';
     import SortableList from '../ReusableComponents/SortableList.svelte';
+
+    $: {
+        saveVault($vaultStorage);
+    }
+
+    const saveVault = () => {
+        let encryptedData = CryptoJS.AES.encrypt(JSON.stringify($vaultStorage), $vaultStorage.passphrase).toString();
+        let saveObj = {
+            'encrypted': true,
+            'saveDateTime': new Date(),
+            'data': encryptedData
+        };
+        let md5 = CryptoJS.MD5(JSON.stringify(saveObj).replace(/\s+/g, ' ').trim()).toString()
+        let newObj = {"valid": md5, ...saveObj}
+        localStorage.setItem('r-vault', JSON.stringify(newObj));
+    }
     
     const sortList = ev => {
         vaultStorage.update( (n) => {
@@ -11,9 +27,63 @@
         })
     };
 
+    let fakedata = [{
+        id: 4,
+        title: "Reddit",
+        username: "Jebby21",
+        password: "Password123",
+        url: "http://www.reddit.com",
+        notes: "No notes...",
+        updated: new Date()
+    },{
+        id: 5,
+        title: "Amazon",
+        username: "Mongo22",
+        password: "Password123",
+        url: "http://www.amazon.co.uk",
+        notes: "No notes...",
+        updated: new Date()
+    },{
+        id: 1,
+        title: "Facebook",
+        username: "PolosMe22",
+        password: "Password123 the arrow ↙",
+        url: "http://www.facebook.com",
+        notes: "No notes...",
+        updated: new Date()
+    },{
+        id: 7,
+        title: "PayPal",
+        username: "@morriscalls",
+        password: "Password123",
+        url: "http://www.paypal.com",
+        notes: "No notes...",
+        updated: new Date()
+    },{
+        id: 8,
+        title: "Uber",
+        username: "chonksMogs22",
+        password: "Password123",
+        url: "http://www.uber.com",
+        notes: "No notes...",
+        updated: new Date()
+    }];
+    
+    let testDataCount = 0;
+    let loadedFake = false;
+    const loadTestData = () => {
+        testDataCount = testDataCount + 1;
+        if(testDataCount > 10 && !loadedFake){
+            loadedFake = true;
+            vaultStorage.update( (n) => {
+                n.entrys = [...fakedata, ...n.entrys];
+                return n;
+            })
+        }
+    }
+
     let lastAct;
     const sortBy = (val) => {
-        console.log("Bonk");
         let comparator = null;
         if(lastAct ==  val){
             vaultStorage.update((n) => {
@@ -54,7 +124,10 @@
 <div class="vault-wrapper">
 
     <div class="toolbar">
-        <span on:click={() => sortBy("title") } >Title <i class="fas fa-sort"></i></span>
+        <span on:click={() => { 
+            loadTestData();
+            sortBy("title");
+        } } >Title <i class="fas fa-sort"></i></span>
         <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
         <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>

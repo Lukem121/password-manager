@@ -63,7 +63,6 @@
             <div class="url-section row">
                 <span class="title">URL</span>
                 <a class="url-value" href="{entry.url}">{entry.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}</a>
-                <!-- <div class="url-value">{entry.url}</div> -->
                 <div class="copy-button">
                     <CopyButton toCopy={ entry.url } />
                 </div>

@@ -4,11 +4,14 @@
     import ImportVault from './UserModals/ImportVault.svelte';
     import NewEntry from './UserModals/NewEntry.svelte';
     import UpdateEntry from './UserModals/UpdateEntry.svelte';
+    import EnterPassphrase from './UserModals/EnterPassphrase.svelte';
 </script>
 
 <div>
     {#if $modalStore == "new"}
         <NewVault />
+    {:else if $modalStore == "enter-passphrase"}
+        <EnterPassphrase />
     {:else if $modalStore == "import"}
         <ImportVault />
     {:else if $modalStore == "entry"}

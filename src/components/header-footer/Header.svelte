@@ -1,4 +1,35 @@
 <script>
+    import { vaultStorage } from '../../DataStores/VaultStore.js';
+    import { modalStore } from '../../DataStores/ModalStateStore.js';
+
+    const validateInput = (val) =>{
+        try {
+            let parsedInput = JSON.parse(val);
+            let saveObj = {...parsedInput};
+            delete parsedInput.valid;
+            parsedInput = JSON.stringify(parsedInput).replace(/\s+/g, ' ').trim();
+            if(saveObj.valid == CryptoJS.MD5(parsedInput)){
+            return true;
+            }else{
+            return false
+            }
+        } catch (e) {
+            return false;
+        }
+    };
+
+    const checkLocalStorage = () => {
+        let ls = localStorage.getItem('r-vault')
+        if(ls){
+            if(validateInput(ls)){
+                modalStore.set("enter-passphrase") 
+            }else{
+                //Add message to user to tell them their local storage is currupt
+            }
+        }
+    }
+    checkLocalStorage();
+
 </script>
 <header>
     <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>

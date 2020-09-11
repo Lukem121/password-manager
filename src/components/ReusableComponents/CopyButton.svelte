@@ -71,9 +71,9 @@
             }
 
             @media screen and (max-width: 500px) {
-                left: -100%;
+                left: -11%;
                 &:after {
-                    left: 72%;
+                    left: 76%;
                 }
             }
         }
