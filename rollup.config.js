@@ -13,7 +13,6 @@ function serve() {
 	function toExit() {
 		if (server) server.kill(0);
 	}
-
 	return {
 		writeBundle() {
 			if (server) return;
@@ -59,7 +58,7 @@ export default {
 		}),
 		commonjs(),
 
-		// In dev mode, call `npm run start` once
+		// In dev mode, call npm run start once
 		// the bundle has been generated
 		!production && serve(),
 
