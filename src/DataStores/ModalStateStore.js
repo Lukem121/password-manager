@@ -8,6 +8,7 @@ import { writable } from 'svelte/store';
  *  - entry
  *  - update_entry-{ENTRY ID HERE}
  *  - enter-passphrase
+ *  - settings
  */
 
 export const modalStore = writable("default");

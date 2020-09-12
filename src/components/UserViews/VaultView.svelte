@@ -27,6 +27,10 @@
         })
     };
 
+    const toggleSettings = () => {
+        modalStore.set("settings");
+    }
+
     let fakedata = [{
         id: 4,
         title: "Reddit",
@@ -141,18 +145,17 @@
         </SortableList>
     </div>
 
-    <!-- <div class="flex-wrapper">
-        {#each $vaultStorage.entrys as entry}
-            <div class="entry">
-                
-            </div>
-        {/each}
-    </div> -->
-
     <div class="mobile-toolbar">
         <div></div>
         <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-4x"></i></button>
     </div>
+
+    <div class="bottom-links">
+        <a href="http://www.github.com/lukem121"><i class="fab fa-github"></i><span>GitHub</span></a>
+        <a href="https://www.linkedin.com/in/luke-askew/"><i class="fab fa-linkedin"></i><span>Linkedin</span></a>
+        <a href="#settings" on:click={toggleSettings}><span id="settings">Settings</span><i class="fas fa-cog"></i></a>
+    </div>
+    
     
 </div>
 
@@ -228,5 +231,28 @@
         }
 
         
+    }
+
+    .bottom-links {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 10px 10px;
+        margin-bottom: 90px;
+        border-radius: 16px;
+        background: var(--bg-dark-colour);
+        a{
+            font-size: 2rem;
+            color: var(--acent-colour);
+            background: none;
+            span{
+                margin-left: 10px;
+                font-size: .8rem;
+            }
+            #settings{
+                    margin-left: 0;
+                    margin-right: 10px;
+                }
+        }
     }
 </style>

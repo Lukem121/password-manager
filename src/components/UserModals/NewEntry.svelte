@@ -113,7 +113,12 @@
     </span>
     
     <span slot="action-btn">
-        <Button on:click={handleSubmit} icon={"add"}>Add</Button>
+        <Button on:click={handleSubmit}>
+          Add
+          <span slot="icon">
+            <i class="fas fa-plus-circle"></i>
+          </span>
+        </Button>
     </span>
     </Card>
 </Modal>

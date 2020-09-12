@@ -21,8 +21,12 @@
                 </span>
 
                 <span slot="action-btn">
-                    <Button on:click={() => { modalStore.set("new") }}
-                    icon={"start"}>Start</Button>
+                    <Button on:click={() => { modalStore.set("new") }}>
+                        Start
+                        <span slot="icon">
+                            <i class="fas fa-play f"></i>
+                        </span>
+                    </Button>
                 </span>
 
             </Card>
@@ -40,8 +44,12 @@
                 </span>
 
                 <span slot="action-btn">
-                    <Button on:click={() => { modalStore.set("import") }} 
-                    icon={"import"}>Import</Button>
+                    <Button on:click={() => { modalStore.set("import") }}>
+                        Import
+                        <span slot="icon">
+                            <i class="fas fa-file-import"></i>
+                        </span>
+                    </Button>
                 </span>
             </Card>
         </div>

@@ -52,7 +52,12 @@
         </span>
 
         <span slot="action-btn">
-            <Button on:click={handleClick} icon={"import"}>Import</Button>
+            <Button on:click={handleClick} icon={"import"}>
+                Import
+                <span slot="icon">
+                    <i class="fas fa-file-import"></i>
+                </span>
+            </Button>
         </span>
     </Card>
 </Modal>

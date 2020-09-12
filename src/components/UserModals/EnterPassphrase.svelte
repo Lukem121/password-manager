@@ -43,7 +43,12 @@
     </span>
     
     <span slot="action-btn">
-        <Button on:click={handleSubmit} icon={"start"}>Unlock</Button>
+        <Button on:click={handleSubmit}>
+          Unlock
+          <span slot="icon">
+            <i class="fas fa-play"></i>
+          </span>
+        </Button>
     </span>
     </Card>
 </Modal>

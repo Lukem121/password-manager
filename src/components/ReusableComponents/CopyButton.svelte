@@ -43,6 +43,7 @@
         .popover {
             cursor: default;
             display: inline;
+            color: black;
             background-color: var(--acent-colour);
             text-align: center;
             font-weight: bold;

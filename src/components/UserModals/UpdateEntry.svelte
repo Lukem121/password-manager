@@ -113,7 +113,12 @@
     </span>
     
     <span slot="action-btn">
-        <Button on:click={handleSubmit} icon={"start"}>Update</Button>
+        <Button on:click={handleSubmit}>
+          Update
+          <span slot="icon">
+            <i class="fas fa-play"></i>
+          </span>
+        </Button>
     </span>
     </Card>
 </Modal>

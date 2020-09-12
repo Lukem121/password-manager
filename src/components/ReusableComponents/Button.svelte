@@ -1,10 +1,12 @@
 <script>
-    export let icon;
 </script>
 
 <button on:click>
     <slot> ... Missing </slot>
-    <img src="icons/{icon}.svg" alt="">    
+    <div class="icon">
+        <slot  name="icon"></slot>
+    </div>
+    
 </button>
 
 <style type="text/scss">
@@ -32,10 +34,8 @@
             outline: none;
         }
 
-        img {
-            display: inline-flex;
-            text-align: left;
-            margin-left: 8px;
+        .icon {
+            margin: 2px 0 0 10px;
             max-width: 20px;
         }
     }

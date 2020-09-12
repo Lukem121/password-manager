@@ -3,7 +3,7 @@
     import CloseButton from './CloseButton.svelte';
 
     export let closeButton = false;
-    export let errorMessage;
+    export let errorMessage = "";
 </script>
 
 <div class="card">
@@ -28,7 +28,6 @@
     </div>
     <div class="action-btn">
         <slot name="action-btn">
-            <span>Missing action button slot</span>
         </slot>
     </div>
 </div>

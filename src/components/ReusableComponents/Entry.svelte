@@ -3,6 +3,7 @@
     import StyledTitle from "../StyledTitle/StyledTitle.svelte";
     import { modalStore } from '../../DataStores/ModalStateStore.js';
     import { vaultStorage } from '../../DataStores/VaultStore.js';
+    import { ruSureStore } from '../../DataStores/AreYouSureStore.js';
     import { slide } from 'svelte/transition';
     import { scale } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
@@ -13,10 +14,39 @@
     let showPassword = false;
 
     const toggleShowPassword = () => {
+        console.log("Bonk")
         showPassword = !showPassword;
     }
     const toggleDraw = () => {
         showDraw = !showDraw;
+    }
+
+    $: {
+        ruSureStoreChange($ruSureStore)
+    }
+
+    let waitingForDeleteResponce = false;
+    const ruSureStoreChange = () => {
+        if(waitingForDeleteResponce){
+            if($ruSureStore == true){
+                vaultStorage.update( (n) => {
+                    n.entrys = n.entrys.filter(en => en != n.entrys.find(x => x.id == entry.id));
+                    return n;
+                });
+                ruSureStore.set("default");
+                waitingForDeleteResponce = false;
+            }else if ($ruSureStore == false){
+                waitingForDeleteResponce = false;
+                modalStore.set("default");
+                ruSureStore.set("default");
+                return;
+            }
+        }
+    }
+
+    const deleteEntry = () => {
+        modalStore.set("are-u-sure");
+        waitingForDeleteResponce = true;
     }
 
 </script>
@@ -25,7 +55,10 @@
     <p class="entry-title">
         <StyledTitle txt={ entry.title.toLowerCase() } />
         {#if showDraw}
-            <span on:click={() => { modalStore.set("update_entry-" + entry.id) }} transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}">Edit<i class="fas fa-pen"></i></span>
+            <div class="delete-edit" transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}">
+                <span class="delete" on:click={ () => {deleteEntry()} }>Delete<i class="fas fa-trash-alt"></i></span>
+                <span class="edit" on:click={() => { modalStore.set("update_entry-" + entry.id) }} >Edit<i class="fas fa-pen"></i></span>
+            </div>
         {/if}
     </p>
     
@@ -93,11 +126,17 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin: -1.8rem 0 5px;
-
+            .delete {
+                margin-right: 5px;
+                i {
+                    color: crimson;
+                }
+            }
             span {
                 cursor: pointer;
                 font-size: 1rem;
                 margin-top: 10px;
+
                 
                 i{  
                     margin-left: 5px;
