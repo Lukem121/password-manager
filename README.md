@@ -1,4 +1,5 @@
-# Password Manager with Svelte
+![Logo](https://user-images.githubusercontent.com/30378184/93003925-9aaa9400-f53a-11ea-8cce-33471188f8f2.png)
+# A password manager made with Svelte
 
 [Live Demo](https://password-manager-seven.vercel.app/) 💪
 
