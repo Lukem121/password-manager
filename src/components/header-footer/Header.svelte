@@ -34,7 +34,7 @@
 <header>
     <a href="#default"><img src="/images/logo.png" alt="Onchain Logo"></a>
     <div class="header-right">
-        <a href="#about"><img src="/images/about.png" alt="about link"></a>
+        <a href="https://github.com/Lukem121/password-manager"><img src="/images/about.png" alt="about link"></a>
     </div>
 </header>
 
