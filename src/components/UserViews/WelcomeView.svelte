@@ -64,9 +64,7 @@
             justify-content: space-evenly;
 
             .import-card{
-                @media screen and (max-width: 500px) {
-                    padding-top: 30px; 
-                }
+                padding-top: 30px; 
             }
 
             @media screen and (max-width: 500px) {
