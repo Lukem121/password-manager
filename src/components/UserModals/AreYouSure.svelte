@@ -39,20 +39,7 @@
 
 
 <style type="text/scss">
-  .wrapper {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-
-    input {
-      width: 100%;
-      height: 40px; 
-      padding-left: 15px;
-      border-radius: 16px;
-      font-weight: bold;
-      border-style: none;
-      outline: none;
-    }
-
+  .wrapper{
+    padding-top: 12px;
   }
 </style>

@@ -4,7 +4,7 @@
 </script>
                         
 
-<div class="backdrop" on:click|self={() => { modalStore.set("default") }}>
+<div class="backdrop" on:mousedown|self={() => { modalStore.set("default") }}>
   <div class="modal" in:fade="{{ duration: 100 }}" >
     <slot></slot>
   </div>
