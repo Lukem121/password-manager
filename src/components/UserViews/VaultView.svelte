@@ -123,6 +123,25 @@
             return n;
         })
     }
+
+
+    function spin(node, { duration }) {
+		return {
+			duration,
+			css: t => {
+				const eased = elasticOut(t);
+
+				return `
+					transform: scale(${eased}) rotate(${eased * 1080}deg);
+					color: hsl(
+						${~~(t * 360)},
+						${Math.min(100, 1000 - 1000 * t)}%,
+						${Math.min(50, 500 - 500 * t)}%
+					);`
+			}
+		};
+    }
+    
 </script>
 
 <div class="vault-wrapper">
@@ -134,7 +153,10 @@
         } } >Title <i class="fas fa-sort"></i></span>
         <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
         <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
-        <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
+        <div class="sync-add">
+            <button class="sync" ><i class="fas fa-sync fa-2x"></i></button>
+            <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
+        </div>
     </div>
 
     <div class="flex-wrapper">
@@ -146,8 +168,9 @@
     </div>
 
     <div class="mobile-toolbar">
-        <div></div>
-        <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-4x"></i></button>
+        <div class="add-btn-bg"></div>
+        <button class="sync" ><i class="fas fa-sync"></i></button>
+        <button class="add" on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
     </div>
 
     <div class="bottom-links">
@@ -194,7 +217,7 @@
 
         @media screen and (max-width: 500px) {
             margin-bottom: 20px;
-            button {
+            .sync-add {
                 display: none;
             }
         }
@@ -202,21 +225,29 @@
 
     .mobile-toolbar {
         display: none;
+        
         @media screen and (max-width: 500px) {
             display: flex;
             flex-direction: row-reverse;
-            div{
+            .add-btn-bg{
                 position: fixed;
-                bottom: 35px;
-                right: 35px;
+                bottom: 45px;
+                right: 26px;
                 border-radius: 25px;
                 background: black;
                 padding: 20px;
             }
             button {
                 position: fixed;
+                font-size: 2.7rem;
+            }
+            .add {
                 bottom: 30px;
                 right: 20px;
+            }
+            .sync {
+                bottom: 30px;
+                right: 80px;
             }
         }
     }
