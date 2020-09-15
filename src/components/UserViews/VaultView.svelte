@@ -3,6 +3,7 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Entry from '../ReusableComponents/Entry.svelte';
     import SortableList from '../ReusableComponents/SortableList.svelte';
+    import SyncButton from '../ReusableComponents/SyncButton.svelte';
 
     $: {
         saveVault($vaultStorage);
@@ -123,24 +124,6 @@
             return n;
         })
     }
-
-
-    function spin(node, { duration }) {
-		return {
-			duration,
-			css: t => {
-				const eased = elasticOut(t);
-
-				return `
-					transform: scale(${eased}) rotate(${eased * 1080}deg);
-					color: hsl(
-						${~~(t * 360)},
-						${Math.min(100, 1000 - 1000 * t)}%,
-						${Math.min(50, 500 - 500 * t)}%
-					);`
-			}
-		};
-    }
     
 </script>
 
@@ -154,7 +137,7 @@
         <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
         <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
         <div class="sync-add">
-            <button class="sync" ><i class="fas fa-sync fa-2x"></i></button>
+            <SyncButton />
             <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
         </div>
     </div>
@@ -169,7 +152,7 @@
 
     <div class="mobile-toolbar">
         <div class="add-btn-bg"></div>
-        <button class="sync" ><i class="fas fa-sync"></i></button>
+        <!-- <button class="sync" class:spin="{syncSpin}" on:click={ toggleSpin } ><i class="fas fa-sync"></i></button> -->
         <button class="add" on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
     </div>
 
@@ -183,6 +166,7 @@
 </div>
 
 <style type="text/scss">
+
     .flex-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -246,6 +230,7 @@
                 right: 20px;
             }
             .sync {
+                font-size: 2.6rem;
                 bottom: 30px;
                 right: 80px;
             }
@@ -257,11 +242,9 @@
         outline: none;
         background: none;
         cursor: pointer;
-        i{
+        i {
             color: var(--acent-colour);
         }
-
-        
     }
 
     .bottom-links {

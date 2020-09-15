@@ -36,6 +36,7 @@
 <style type="text/scss">
     .card {       
         box-sizing: border-box;
+        min-width: 350px;
         padding: 5px 20px 0 20px;
         border-radius: 16px;
         background: var(--bg-dark-colour);
