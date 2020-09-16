@@ -13,10 +13,8 @@
     }
 </script>
 
-<span class="sync-button-wrapper">
-    <span class="popover" in:fade="{{ duration: 300 }}" >
-        Sync across devices
-    </span>
+<span class="sync-button-wrapper" on:click={() => { console.log("Hello") }}>
+    <span class="text">Sync across devices</span>
     <button class="sync" class:spin="{syncSpin}" on:click={ toggleSpin }><i class="fas fa-sync"></i></button>
 </span>
 
@@ -24,7 +22,66 @@
 
 .sync-button-wrapper {
     position: relative;
-    display: inline-block;
+    .text {
+        width: 130px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: var(--acent-colour);
+        color: black;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -22px;
+        right: 105%;
+
+        &::after{
+            content: " ";
+            position: absolute;
+            top: 50%;
+            left: 100%; /* To the right of the tooltip */
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent transparent var(--acent-colour);;
+        }
+
+        @media screen and (max-width: 880px) {
+            top: -75px;
+            right: 30%;
+
+            &::after{
+                content: " ";
+                position: absolute;
+                top: 109%; /* At the bottom of the tooltip */
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: var(--acent-colour) transparent transparent transparent;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            top: -18px;
+            right: 100%;
+
+            &::after{
+                content: " ";
+                position: absolute;
+                top: 50%; /* At the bottom of the tooltip */
+                left: 104%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent transparent var(--acent-colour);
+            }
+        }
+    }
+    
 
     button {
         border-style: none;
@@ -35,48 +92,10 @@
             font-size: 1.5rem;
             background: none;
             color: var(--acent-colour);
+            vertical-align: middle;
         }    
     }
-
-    .popover {
-        cursor: default;
-        display: inline;
-        color: black;
-        background-color: var(--acent-colour);
-        text-align: center;
-        font-weight: bold;
-        border-radius: 6px;
-        padding: 2px 4px;
-        
-        /* Position the tooltip */
-        top: -50px;
-        right: 105%;
-
-        i{
-            color: black;
-        }
-
-        &:after {
-            content: " ";
-            position: absolute;
-            top: 40%;
-            left: 85%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: transparent transparent transparent var(--acent-colour);
-        }
-
-        @media screen and (max-width: 500px) {
-            left: -11%;
-            &:after {
-                left: 76%;
-            }
-        }
-    }
 }
-
-    
     .spin {
         animation-name: spin;
         animation-duration: 200ms;

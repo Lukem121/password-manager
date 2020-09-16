@@ -137,8 +137,8 @@
         <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
         <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
         <div class="sync-add">
-            <SyncButton />
-            <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
+            <SyncButton class="sync-btn" />
+            <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
         </div>
     </div>
 
@@ -152,7 +152,7 @@
 
     <div class="mobile-toolbar">
         <div class="add-btn-bg"></div>
-        <!-- <button class="sync" class:spin="{syncSpin}" on:click={ toggleSpin } ><i class="fas fa-sync"></i></button> -->
+        <SyncButton class="sync-btn" />
         <button class="add" on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
     </div>
 
@@ -191,7 +191,7 @@
         padding: 5px 20px 5px 20px;
         background-color: var(--bg-dark-colour);
         border-radius: 12px;
-
+        
         span {
             cursor: pointer;
             i{
@@ -209,30 +209,15 @@
 
     .mobile-toolbar {
         display: none;
-        
         @media screen and (max-width: 500px) {
             display: flex;
-            flex-direction: row-reverse;
-            .add-btn-bg{
-                position: fixed;
-                bottom: 45px;
-                right: 26px;
-                border-radius: 25px;
-                background: black;
-                padding: 20px;
-            }
-            button {
-                position: fixed;
-                font-size: 2.7rem;
-            }
-            .add {
-                bottom: 30px;
-                right: 20px;
-            }
-            .sync {
-                font-size: 2.6rem;
-                bottom: 30px;
-                right: 80px;
+            justify-content: flex-end;
+            position: fixed;
+            bottom: 45px;
+            right: 26px;
+            i{
+                vertical-align: middle;
+                font-size: 1.5rem;
             }
         }
     }
