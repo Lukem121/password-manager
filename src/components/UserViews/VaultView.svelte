@@ -3,6 +3,7 @@
     import { vaultStorage } from '../../DataStores/VaultStore.js';
     import Entry from '../ReusableComponents/Entry.svelte';
     import SortableList from '../ReusableComponents/SortableList.svelte';
+    import SyncButton from '../ReusableComponents/SyncButton.svelte';
 
     $: {
         saveVault($vaultStorage);
@@ -123,6 +124,7 @@
             return n;
         })
     }
+    
 </script>
 
 <div class="vault-wrapper">
@@ -134,7 +136,10 @@
         } } >Title <i class="fas fa-sort"></i></span>
         <span on:click={() => sortBy("username") } >Username <i class="fas fa-sort" ></i></span>
         <span on:click={() => sortBy("title") }>Updated <i class="fas fa-sort" ></i></span>
-        <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-2x"></i></button>
+        <div class="sync-add">
+            <SyncButton class="sync-btn" />
+            <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
+        </div>
     </div>
 
     <div class="flex-wrapper">
@@ -146,8 +151,9 @@
     </div>
 
     <div class="mobile-toolbar">
-        <div></div>
-        <button on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle fa-4x"></i></button>
+        <div class="add-btn-bg"></div>
+        <SyncButton class="sync-btn" />
+        <button class="add" on:click={() => { modalStore.set("entry") }}><i class="fas fa-plus-circle"></i></button>
     </div>
 
     <div class="bottom-links">
@@ -160,6 +166,7 @@
 </div>
 
 <style type="text/scss">
+
     .flex-wrapper {
         display: flex;
         flex-wrap: wrap;
@@ -184,7 +191,7 @@
         padding: 5px 20px 5px 20px;
         background-color: var(--bg-dark-colour);
         border-radius: 12px;
-
+        
         span {
             cursor: pointer;
             i{
@@ -194,7 +201,7 @@
 
         @media screen and (max-width: 500px) {
             margin-bottom: 20px;
-            button {
+            .sync-add {
                 display: none;
             }
         }
@@ -204,19 +211,13 @@
         display: none;
         @media screen and (max-width: 500px) {
             display: flex;
-            flex-direction: row-reverse;
-            div{
-                position: fixed;
-                bottom: 35px;
-                right: 35px;
-                border-radius: 25px;
-                background: black;
-                padding: 20px;
-            }
-            button {
-                position: fixed;
-                bottom: 30px;
-                right: 20px;
+            justify-content: flex-end;
+            position: fixed;
+            bottom: 45px;
+            right: 26px;
+            i{
+                vertical-align: middle;
+                font-size: 1.5rem;
             }
         }
     }
@@ -226,11 +227,9 @@
         outline: none;
         background: none;
         cursor: pointer;
-        i{
+        i {
             color: var(--acent-colour);
         }
-
-        
     }
 
     .bottom-links {

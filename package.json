@@ -11,6 +11,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-typescript": "^5.0.2",
     "@tsconfig/svelte": "^1.0.10",
+    "prettier": "2.1.1",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^6.0.0",
@@ -23,4 +24,4 @@
     "node-sass": "^4.14.1",
     "sirv-cli": "^1.0.0"
   }
-} 
+}

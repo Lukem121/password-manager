@@ -85,7 +85,7 @@
 <Modal>
     <Card closeButton={true} errorMessage={errorMessage} on:closeClick>
     <span slot="title">
-        Create a new entry!
+        New entry!
     </span>
 
     <span slot="content">
