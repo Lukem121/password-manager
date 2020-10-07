@@ -1,9 +1,7 @@
 <script>
 </script>
 
-<button on:click>
-    <img src="icons/close.svg" alt="close modal button">    
-</button>
+
 
 <style type="text/scss">
     button {
