@@ -7,8 +7,6 @@
     import Entry from "../components/Entry.svelte";
     import SortableList from "../components/SortableList.svelte";
     import SyncButton from "../components/SyncButton.svelte";
-    import { scale } from 'svelte/transition';
-    import { sineInOut } from 'svelte/easing';
 
     let loggedIn = false;
     let uid;
@@ -169,8 +167,7 @@
     
 </script>
 
-<div class="vault-wrapper" transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}">
-
+<div class="vault-wrapper">
     <div class="toolbar">
         <span on:click={() => { 
             loadTestData();

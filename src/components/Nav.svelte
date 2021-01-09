@@ -4,7 +4,7 @@
 
 <nav>
 	<a href="."><img id="logo" src="logo.png" alt="logo"></a>
-	<a class="about" href="about"><img src="about.png" alt="about"></a>
+	<a class="about" href="https://github.com/Lukem121/password-manager"><img src="about.png" alt="about"></a>
 </nav>
 
 <style>

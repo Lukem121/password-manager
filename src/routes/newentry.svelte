@@ -82,7 +82,7 @@
     }
 </script>
 
-<div class="card" in:fly="{{ y: 200, duration: 200 }}" out:fade>
+<div class="card" out:fade>
   <Card closeButton={true} errorMessage={errorMessage} on:click={() => { goto("vault") }}>
     New entry!
     <span slot="content">

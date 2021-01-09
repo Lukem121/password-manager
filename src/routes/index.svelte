@@ -59,7 +59,7 @@
 	.welcome-content {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 	@media screen and (max-width: 500px) {
 		.welcome-content {
@@ -69,7 +69,6 @@
 	.card {
 		max-width: 45%;
 		min-width: 300px;
-		margin-right: 15px;
 	}
 	@media screen and (max-width: 500px) {
 		.card {

@@ -4,8 +4,6 @@
     import { modalStore } from '../ModalStateStore.js';
     import { vaultStorage } from '../VaultStore.js';
     import { ruSureStore } from '../AreYouSureStore.js';
-    import { slide } from 'svelte/transition';
-    import { scale } from 'svelte/transition';
     import { sineInOut } from 'svelte/easing';
     import { flip } from 'svelte/animate';
 
@@ -56,7 +54,7 @@
     <p class="entry-title">
         <StyledTitle txt={ entry.title.toLowerCase() } />
         {#if showDraw}
-            <div class="delete-edit" transition:scale="{{duration: 250, opacity: 0.5, start: 0.5, easing: sineInOut}}">
+            <div class="delete-edit"">
                 <span class="delete" on:click={ () => {deleteEntry()} }>Delete<i class="fas fa-trash-alt"></i></span>
                 <span class="edit" on:click={() => { modalStore.set("update_entry-" + entry.id) }} >Edit<i class="fas fa-pen"></i></span>
             </div>
@@ -93,7 +91,7 @@
     </div>
 
     {#if showDraw}
-        <div class="drawer" transition:slide={{duration: 200, easing: sineInOut }}>
+        <div class="drawer">
             <div class="url-section row">
                 <span class="title">URL</span>
                 <a class="url-value" href="{entry.url}">{entry.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0]}</a>
